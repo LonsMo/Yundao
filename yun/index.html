@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="Keywords" content="格莱银河 " />
+		<meta name="Description" content="本页面是课堂演示页面" />
+		<meta name="author" content="Mr-Sun" />
+		<title>sun-education</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/my-reset.css" />
+		<style type="text/css">
+			/*设置版心*/
+			
+			.contaienr {
+				width: 1020px;
+				margin: 0 auto;
+			}
+			/*头部开始*/
+			
+			.header {
+				height: 100px;
+				background-color: #fff;
+			}
+			/*logo的结构记住了，这样写可以提高网页的SEO----被搜索引擎收到*/
+			
+			.header .logo {
+				float: left;
+				font-size: 0;
+			}
+			
+			.header .logo a {
+				display: inline-block;
+				width: 223px;
+				height: 100px;
+				background: url(images/logo.png) no-repeat;
+			}
+			
+			.header .nav {
+				float: right;
+			}
+			
+			.header .nav li {
+				float: left;
+				height: 100px;
+				line-height: 100px;
+				margin: 0 20px;
+			}
+			
+			.header .nav li a {
+				font-size: 16px;
+			}
+			
+			.header .nav li:hover a {
+				color: deepskyblue;
+			}
+			
+			.banner {
+				height: 620px;
+				/*background-attachment: fixed;*/
+				background: url(images/banner.jpg) fixed no-repeat center center;
+				background-size: cover;
+			}
+			/*服务*/
+			
+			.server {
+				margin-top: 70px;
+			}
+			
+			.server .server_tit {
+				position: relative;
+				margin: 0 50px;
+				border-top: 1px lightgray solid;
+			}
+			
+			.server .server_tit img {
+				position: absolute;
+				left: 50%;
+				margin-left: -84px;
+				top: -24px;
+			}
+			
+			.server .server_tit p {
+				margin: 50px 100px 70px;
+				font-size: 12px;
+				line-height: 2em;
+				text-align: center;
+			}
+			
+			.server .server_list {}
+			
+			.server .server_list li {
+				float: left;
+				text-align: center;
+				border: 1px #e7e8e9 solid;
+				width: 30%;
+				padding: 40px 29px;
+				background-color: #fff;
+				/*控制元素的属性的变化过程
+				 	控制的属性 变化时间
+				 * */
+				transition: all .5s;
+			}
+			
+			.server .server_list li:hover {
+				/*加盒子阴影：x偏移 y偏移 模糊距离  颜色*/
+				box-shadow: 0 15px 15px rgba(0, 0, 0, .3);
+				/*css3转换属性
+				 * 转换：移动（x，y）
+				 */
+				transform: translate(0, -5px);
+			}
+			/*IE8不兼容nth-child 但是支持first-child*/
+			/*.server .server_list li:nth-child(2){
+				
+			}*/
+			
+			.server .server_list li:first-child+li {
+				margin: 0 5%;
+			}
+			
+			.server .server_list li h2 {
+				margin: 50px 0 25px;
+				font-weight: 500;
+			}
+			
+			.server .server_list li p {
+				font-size: 12px;
+				color: #666666;
+				line-height: 2em;
+				margin: 25px 0;
+			}
+			
+			.server .server_list a {
+				display: inline-block;
+				padding: 10px 20px;
+				border: 1px #ff9412 solid;
+				background-color: #fff;
+				color: #666666;
+				border-radius: 5px;
+				transition: all .5s linear;
+			}
+			
+			.server .server_list a:hover {
+				background-color: #ff9412;
+				color: #fff;
+			}
+			/*精品展示*/
+			
+			.cases {
+				margin-top: 70px;
+			}
+			
+			.cases .server_tit {
+				position: relative;
+				margin: 0 50px;
+				border-top: 1px lightgray solid;
+			}
+			
+			.cases .server_tit img {
+				position: absolute;
+				left: 50%;
+				margin-left: -84px;
+				top: -24px;
+			}
+			
+			.cases .list_con {
+				position: relative;
+				margin-top: 70px;
+			}
+			
+			.cases .list_con>div {
+				width: 60px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background-color: black;
+				color: #fff;
+				position: absolute;
+				top: 50%;
+				margin-top: -30px;
+			}
+			/*
+			 左右同时加：
+			 	不会发生层叠：因为不是同一个属性
+			 	左右同时加以左为准
+			 	上下同时加以上为准
+			 */
+			
+			.cases .list_con .left {
+				left: -100px;
+			}
+			
+			.cases .list_con .right {
+				right: -100px;
+			}
+			
+			.cases .list_con .list {}
+			
+			.cases .list_con .list li {
+				float: left;
+				width: 30%;
+				position: relative;
+			}
+			
+			.cases .list_con .list li:first-child+li {
+				margin: 0 5%;
+			}
+			
+			.cases .list_con .list li img {
+				width: 100%;
+			}
+			
+			.cases .list_con .list li .bottom {
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, .3);
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+				color: #fff;
+			}
+			
+			.cases .list_con .list li .menban {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: rgba(0, 0, 0, 0.2) url(images/fdj.png) no-repeat center center;
+				display: none;
+				/*background-color: ;*/
+			}
+			
+			.cases .list_con .list li:hover .menban {
+				display: inline-block;
+			}
+			/*商品区*/
+			
+			.goods {
+				margin-top: 100px;
+			}
+			
+			.goods .server_tit {
+				position: relative;
+				margin: 0 50px;
+				border-top: 1px lightgray solid;
+			}
+			
+			.goods .server_tit img {
+				position: absolute;
+				left: 50%;
+				margin-left: -84px;
+				top: -24px;
+			}
+			
+			.goods .list_con {
+				margin-top: 70px;
+				width: 1018px;
+				height: 242px;
+				overflow: hidden;
+			}
+			
+			.goods .list_con .list {
+				width: 1020px;
+			}
+			
+			.goods .list_con .list li {
+				float: left;
+				width: 20%;
+				border-right: 1px dashed lightgray;
+				border-bottom: 1px dashed lightgray;
+				text-align: center;
+				padding: 20px;
+			}
+			.footer {
+				height: 165px;
+				background-color: #212425;
+				overflow: hidden;
+				margin-top: 100px;
+			}
+			
+			.subnav {
+				text-align: center;
+				margin-top: 50px;
+				color: #f0f1f1;
+				font-size: 14px;
+			}
+			
+			.subnav a {
+				color: #f0f1f1;
+				text-decoration: none;
+				padding: 0 5px;
+				font-size: 14px;
+			}
+			
+			.subnav a:hover {
+				color: #2288f6;
+				text-decoration: underline;
+			}
+			
+			.footer p {
+				text-align: center;
+				color: #888888;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="header">
+			<div class="contaienr clearfix">
+				<!--logo部分的结构，很重要-->
+				<h1 class="logo">
+					<a href="index.html"></a>
+					首页
+				</h1>
+				<ul class="nav clearfix">
+					<!--真正实现空跳转及 统一选择快捷键-->
+					<li>
+						<a href="javascript:void(0)"> 首页</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">云道商城</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"> 智慧门店</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">营销平台</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"> 媒体联盟</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">关于云道</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--banner-->
+		<div class="banner"></div>
+		<!--服务-->
+		<div class="contaienr server">
+			<div class="server_tit">
+				<img src="images/ser.png" alt="" />
+				<p>shopcmd云道，国内领先的独立电商解决方案及全渠道营销平台。完整的产品体系，简约的系统，个性化前端，全覆盖多渠道营销体系... 我们致力于打造一个服务于品牌商城/独立电商的完整生态，让企业的独立电商之路变得更简单，也更有价值！</p>
+			</div>
+			<ul class="server_list clearfix">
+				<li>
+					<img src="images/icon1.png" alt="" />
+					<h2>我是卖家</h2>
+					<p>shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们 从互联网时代品牌建设和品牌营销的全 新视角，赋予了品牌商城及独立电商更 大的生存空间和存在价值！ </p>
+					<a href="#">我要建站</a>
+
+				</li>
+				<li>
+					<img src="images/icon1.png" alt="" />
+					<h2>我是卖家</h2>
+					<p>shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们 从互联网时代品牌建设和品牌营销的全 新视角，赋予了品牌商城及独立电商更 大的生存空间和存在价值！ </p>
+					<a href="#">我要建站</a>
+
+				</li>
+				<li>
+					<img src="images/icon1.png" alt="" />
+					<h2>我是卖家</h2>
+					<p>shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们 从互联网时代品牌建设和品牌营销的全 新视角，赋予了品牌商城及独立电商更 大的生存空间和存在价值！ </p>
+					<a href="#">我要建站</a>
+
+				</li>
+			</ul>
+		</div>
+		<div class="cases contaienr">
+			<div class="server_tit">
+				<img src="images/case.png" alt="" />
+			</div>
+			<div class="list_con">
+				<ul class="clearfix list">
+					<li>
+						<img src="images/pro1.png" alt="" />
+						<div class="bottom">
+							帮助中小型企业快速安装阿萨德系统
+						</div>
+						<div class="menban"></div>
+					</li>
+					<li>
+						<img src="images/pro1.png" alt="" />
+						<div class="bottom">
+							帮助中小型企业快速安装阿萨德系统
+						</div>
+						<div class="menban"></div>
+					</li>
+					<li>
+						<img src="images/pro1.png" alt="" />
+						<div class="bottom">
+							帮助中小型企业快速安装阿萨德系统
+						</div>
+						<div class="menban"></div>
+					</li>
+				</ul>
+				<div class="left">&lt;</div>
+				<div class="right">&gt;</div>
+			</div>
+		</div>
+		<div class="goods contaienr">
+			<div class="server_tit">
+				<img src="images/case.png" alt="" />
+			</div>
+			<div class="list_con">
+				<ul class="list clearfix">
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="images/tb.png" alt="" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 页面底部开始啦 -->
+		<div class="footer">
+			<div class="subnav">
+				<a href="#">shopcmd</a> |
+				<a href="#">首页</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+				<a href="#">官网云商城</a> |
+			</div>
+			<p>©Copyright 2015 苏州海云网络科技有限公司版权所有 | 苏ICP备15038170号-3</p>
+		</div>
+	</body>
+
+</html>
